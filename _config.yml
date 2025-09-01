@@ -1,5 +1,0 @@
-title: "My Blog"
-description: "CTF & OSCP Writeups"
-theme: minima   
-baseurl: ""     # サブフォルダ利用時に調整
-url: "https://yourname.github.io"
