@@ -1,85 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #000;
-            color: #fff;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
-        }
-        .container {
-            max-width: 600px;
-            padding: 30px;
-            background-color: #333;
-            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            text-align: center;
-            margin: 20px;
-        }
-        .profile-pic {
-            display: block;
-            max-width: 150px;
-            margin: 20px auto;
-            border-radius: 50%;
-            border: 4px solid #fff;
-        }
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            color: #fff;
-        }
-        p {
-            font-size: 1.1em;
-            line-height: 1.6;
-            color: #ccc;
-            margin-bottom: 20px;
-        }
-        .contact {
-            margin-top: 30px;
-            font-size: 1em;
-        }
-        .contact a {
-            color: #b0c4de; 
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease, transform 0.2s ease;
-        }
-        .contact a:hover {
-            color: #87ceeb; 
-            text-decoration: underline;
-            transform: scale(1.05); 
-        }
-        .cta-btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 30px;
-            background-color: #1e90ff;
-            color: #fff;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-        .cta-btn:hover {
-            background-color: #63a4ff;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Self Introduction</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #f9fafb, #ffffff, #f1f5f9);
+      color: #1e293b;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    header h1 {
+      font-size: 2rem;
+      font-weight: 600;
+    }
+    header p {
+      color: #64748b;
+      font-size: 0.9rem;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      margin-top: 1.5rem;
+    }
+    .profile {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .profile img {
+      width: 110px;
+      height: 110px;
+      border-radius: 1rem;
+      object-fit: cover;
+      border: 1px solid #e2e8f0;
+    }
+    ul {
+      margin-top: 1rem;
+      padding-left: 1.2rem;
+    }
+    ul li {
+      margin-bottom: 0.8rem;
+    }
+    ul li span {
+      margin-right: 0.4rem;
+    }
+    .links a {
+      display: inline-block;
+      margin-right: 0.5rem;
+      margin-top: 1rem;
+      padding: 0.4rem 0.8rem;
+      font-size: 0.9rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      color: #1e293b;
+      transition: background 0.2s;
+    }
+    .links a:hover {
+      background: #f1f5f9;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.75rem;
+      color: #94a3b8;
+      margin-top: 2rem;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <img src="a.jpg" alt="Profile Picture" class="profile-pic">
-        <h1>John Smith</h1>
-        <p>Hello, my name is John Smith. I have a keen interest in expanding my knowledge and exploring new topics. I'm constantly learning and experimenting with new technologies.</p>
-        <div class="contact">
-            <a href="https://github.com/J0hnSm1thyk" class="cta-btn" target="_blank">Visit My GitHub</a>
-            <p>Feel free to contact me on <a hre="https://x.com/J0hnSm1thyk" target="_blank">X</a>
+  <div class="container">
+    <header>
+      <h1>Simple Self-Introduction</h1>
+      <p>Clean, readable, and easy to customize.</p>
+    </header>
+
+    <section class="card">
+      <div class="profile">
+        <!-- 仮のアイコン画像 -->
+        <img src="a.jpg" alt="Profile icon">
+
+        <div>
+          <h2>Hi there!</h2>
+          <p>
+            I'm passionate about <strong>Cybersecurity</strong> and currently exploring multiple areas in the field, including:
+          </p>
+          <ul>
+            <li><span>🕵️‍♂️</span><strong>Malware Analysis</strong> — dissecting malicious code to understand its behavior</li>
+            <li><span>🔓</span><strong>Penetration Testing</strong> — discovering and exploiting vulnerabilities ethically</li>
+            <li><span>🌐</span><strong>Web Security</strong> — securing applications against real-world attacks</li>
+            <li><span>💻</span><strong>Programming</strong> — writing tools and scripts to automate security tasks</li>
+            <li><span>📡</span><strong>Networking</strong> — understanding protocols, traffic analysis, and infrastructure</li>
+          </ul>
+          <div class="links">
+            <a href="#">Resume</a>
+            <a href="#">GitHub</a>
+            <a href="#">Contact</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © 2025 Your Name — Feel free to customize.
+    </footer>
+  </div>
+</body>
+</html>
