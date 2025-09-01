@@ -1,0 +1,5 @@
+title: "My Blog"
+description: "Writeups & blog"
+theme: minima   # Jekyll 標準テーマ
+baseurl: ""     # サブフォルダ利用時に調整
+url: "https://J0hnSm1thyk.github.io"
