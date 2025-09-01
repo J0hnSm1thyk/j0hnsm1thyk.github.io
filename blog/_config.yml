@@ -1,11 +1,11 @@
 # サイトの基本設定
 title: My Blog # サイトのタイトル
 description: "This blog features write-ups and technical articles." 
-author: J0hnSm1th
+author: HOME
 
 # URL設定
 baseurl: "/blog" # リポジトリが「username.github.io/blog」のようなサブディレクトリにある場合
-url: "https://J0hnSm1thyk.github.io" # あなたのGitHub PagesのURL
+url: "https://j0hnSm1thyk.github.io" # あなたのGitHub PagesのURL
 
 # Jekyllのビルド設定
 markdown: kramdown
