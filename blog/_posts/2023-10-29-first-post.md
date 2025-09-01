@@ -13,4 +13,4 @@ Here's a list:
 - Item 2
 
 And here's an image:
-![Description of the image](/assets/images/cat.png)
+![Description of the image](../assets/images/cat.png)
