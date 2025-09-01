@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myprofile - J0hnSm1thyk</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+        .profile-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .profile-icon {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #007bff;
+            margin-bottom: 15px;
+        }
+        h1 {
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+        .content {
+            text-align: left;
+        }
+        .content ul {
+            list-style: none;
+            padding: 0;
+        }
+        .content ul li {
+            background: #e9f7ff;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-left: 5px solid #007bff;
+            border-radius: 4px;
+        }
+        .content ul li strong {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="profile-header">
+            <img src="icon-catgirl.png" alt="プロフィールアイコン" class="profile-icon">
+            <h1>Hi there!</h1>
+        </header>
+        <div class="content">
+            <p>I'm passionate about <strong>Cybersecurity</strong> and currently exploring multiple areas in the field, including:</p>
+            <ul>
+                <li>🕵️‍♂️ <strong>Malware Analysis</strong> — dissecting malicious code to understand its behavior</li>
+                <li>🔓 <strong>Penetration Testing</strong> — discovering and exploiting vulnerabilities ethically</li>
+                <li>🌐 <strong>Web Security</strong> — securing applications against real-world attacks</li>
+                <li>💻 <strong>Programming</strong> — writing tools and scripts to automate security tasks</li>
+                <li>📡 <strong>Networking</strong> — understanding protocols, traffic analysis, and infrastructure</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
