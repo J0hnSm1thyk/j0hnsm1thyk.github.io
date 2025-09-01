@@ -1,65 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Posts</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            color: #007bff;
-            text-align: center;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        li {
-            margin-bottom: 15px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 15px;
-        }
-        a {
-            text-decoration: none;
-            color: #0056b3;
-            font-weight: bold;
-            font-size: 1.2em;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .date {
-            font-size: 0.9em;
-            color: #666;
-            display: block;
-            margin-top: 5px;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>My Blog Posts</h1>
-        <ul>
-            <li>
-                <a href="post1.html">Title of the test blog post</a>
-                <span class="date">October 27, 2023</span>
-            </li>
-            </ul>
-    </div>
-</body>
-</html>
+---
+layout: default
+title: Blog - Posts
+---
+
+<h1>My Blog Posts</h1>
+<ul>
+    {% for post in site.posts %}
+    <li>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+        <span class="date">{{ post.date | date: "%Y年%m月%d日" }}</span>
+    </li>
+    {% endfor %}
+</ul>
