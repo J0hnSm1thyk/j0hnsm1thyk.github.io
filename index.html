@@ -5,12 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Personal introduction page of an engineer learning cybersecurity as a hobby">
   <title>J0hnSm1thyk</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --text: #0f1419;
-      --muted: #536471;
-      --accent: #1d9bf0;
-      --border: #eff3f4;
+      --text: #16171c;
+      --muted: #71727a;
+      --border: #ececf0;
+      --bg: #fbfbfc;
+      --gradient: linear-gradient(135deg, #6d5dfc, #4ac8f0);
     }
 
     * {
@@ -20,95 +24,143 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial,
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial,
         "Hiragino Sans", "Noto Sans JP", sans-serif;
-      background: #ffffff;
+      background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background:
+        radial-gradient(600px 300px at 15% -5%, rgba(109, 93, 252, 0.08), transparent 60%),
+        radial-gradient(600px 300px at 90% 10%, rgba(74, 200, 240, 0.08), transparent 60%);
     }
 
     .container {
-      max-width: 600px;
+      max-width: 640px;
       margin: 0 auto;
-      padding: 3.5rem 1.5rem;
+      padding: 5rem 1.75rem 3rem;
     }
 
     /* Header */
-    header {
-      margin-bottom: 2.5rem;
+    .hero {
+      margin-bottom: 3.5rem;
     }
 
     .avatar {
-      width: 84px;
-      height: 84px;
+      width: 88px;
+      height: 88px;
       border-radius: 50%;
-      background: var(--accent);
+      background: var(--gradient);
       color: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 2.1rem;
+      font-family: "Sora", sans-serif;
+      font-size: 2.2rem;
       font-weight: 700;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 10px 30px rgba(109, 93, 252, 0.3);
     }
 
-    header h1 {
-      font-size: 1.5rem;
+    .hero h1 {
+      font-family: "Sora", sans-serif;
+      font-size: 2.4rem;
       font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
     }
 
-    header .handle {
+    .hero .handle {
       color: var(--muted);
       font-size: 0.95rem;
-      margin-top: 0.15rem;
+      margin-top: 0.35rem;
+      font-weight: 500;
     }
 
-    header .tagline {
+    .hero .tagline {
       color: var(--text);
-      margin-top: 0.75rem;
-      font-size: 1rem;
+      margin-top: 1rem;
+      font-size: 1.05rem;
+      max-width: 42ch;
     }
 
     /* Sections */
     section {
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
     }
 
     section h2 {
-      font-size: 0.8rem;
-      font-weight: 700;
+      font-family: "Sora", sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.14em;
       color: var(--muted);
-      margin-bottom: 0.75rem;
+      margin-bottom: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    section h2::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--border);
     }
 
     section p {
-      color: var(--text);
+      color: #3a3b42;
+      font-size: 0.98rem;
     }
 
     /* Interest items */
     .interest-list {
       list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
     }
 
     .interest-list li {
-      padding: 0.75rem 0;
-      border-bottom: 1px solid var(--border);
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1rem 1.1rem;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
     }
 
-    .interest-list li:last-child {
-      border-bottom: none;
+    .interest-list li:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(22, 23, 28, 0.06);
+      border-color: #d7d8de;
+    }
+
+    .interest-list li .icon {
+      font-size: 1.3rem;
+      line-height: 1;
+      display: block;
+      margin-bottom: 0.5rem;
     }
 
     .interest-list li strong {
       display: block;
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: 600;
+      margin-bottom: 0.25rem;
     }
 
     .interest-list li span {
-      font-size: 0.9rem;
+      font-size: 0.82rem;
       color: var(--muted);
     }
 
@@ -116,38 +168,58 @@
     .links {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.75rem;
+      gap: 0.6rem;
     }
 
     .links a {
       display: inline-flex;
       align-items: center;
-      gap: 0.35rem;
-      padding: 0.5rem 1rem;
-      background: var(--border);
+      gap: 0.5rem;
+      padding: 0.55rem 1.1rem;
+      background: #ffffff;
+      border: 1px solid var(--border);
       color: var(--text);
       border-radius: 999px;
       text-decoration: none;
       font-size: 0.9rem;
       font-weight: 600;
-      transition: background 0.15s ease;
+      transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .links a svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+      opacity: 0.7;
     }
 
     .links a:hover {
-      background: #e1e8ed;
+      border-color: #d0d1d8;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(22, 23, 28, 0.06);
     }
 
     footer {
       text-align: center;
       color: var(--muted);
-      font-size: 0.8rem;
-      margin-top: 2.5rem;
+      font-size: 0.82rem;
+      margin-top: 3.5rem;
+      letter-spacing: 0.02em;
+    }
+
+    @media (max-width: 480px) {
+      .interest-list {
+        grid-template-columns: 1fr;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <header>
+    <header class="hero">
       <div class="avatar">J</div>
       <h1>John Smith</h1>
       <p class="handle">@J0hnSm1thyk</p>
@@ -168,20 +240,24 @@
       <h2>Areas of Interest</h2>
       <ul class="interest-list">
         <li>
+          <span class="icon">🌐</span>
           <strong>Network Security</strong>
           <span>TCP/IP, firewalls, Wireshark</span>
         </li>
         <li>
+          <span class="icon">🔒</span>
           <strong>Web App Security</strong>
-          <span>OWASP Top 10, XSS, SQLi basics</span>
+          <span>OWASP Top 10, XSS, SQLi</span>
         </li>
         <li>
-          <strong>Crypto &amp; Authentication</strong>
-          <span>Public-key crypto, auth mechanisms</span>
+          <span class="icon">🔑</span>
+          <strong>Crypto &amp; Auth</strong>
+          <span>Public-key crypto, auth</span>
         </li>
         <li>
+          <span class="icon">🎯</span>
           <strong>Penetration Testing</strong>
-          <span>Enumeration, exploitation, reporting</span>
+          <span>Enumeration, exploitation</span>
         </li>
       </ul>
     </section>
@@ -189,8 +265,14 @@
     <section>
       <h2>Links</h2>
       <div class="links">
-        <a href="https://github.com/j0hnsm1thyk" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://x.com/j0hnsm1thyk" target="_blank" rel="noopener">X (Twitter)</a>
+        <a href="https://github.com/j0hnsm1thyk" target="_blank" rel="noopener">
+          <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+          GitHub
+        </a>
+        <a href="https://x.com/j0hnsm1thyk" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          X
+        </a>
       </div>
     </section>
 
