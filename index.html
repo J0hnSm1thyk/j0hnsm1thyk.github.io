@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal introduction page of an engineer learning cybersecurity as a hobby">
+  <title>John Smith | Cybersecurity Learner</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --card: #ffffff;
+      --text: #1f2328;
+      --muted: #6b7280;
+      --accent: #1f6feb;
+      --border: #e5e7eb;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial,
+        "Hiragino Sans", "Noto Sans JP", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    header .tagline {
+      color: var(--muted);
+      margin-top: 0.25rem;
+    }
+
+    /* Sections */
+    section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    section h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+    }
+
+    section p {
+      color: #374151;
+    }
+
+    /* Interest items */
+    .interest-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .interest-list li {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.9rem 1rem;
+    }
+
+    .interest-list li strong {
+      display: block;
+      font-size: 0.95rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .interest-list li span {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* Links */
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .links a {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+
+    .links a:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="avatar">J</div>
+      <h1>John Smith</h1>
+      <p class="tagline">Learning cybersecurity as a hobby</p>
+    </header>
+
+    <section>
+      <h2>About Me</h2>
+      <p>
+        Hi, I'm John Smith.<br>
+        I work as an engineer, but beyond my day job, I'm fascinated by cybersecurity
+        and study its fundamentals as a hobby. I enjoy understanding how things work
+        by hands-on practice, and I love sharing what I learn with others.
+      </p>
+    </section>
+
+    <section>
+      <h2>Areas of Interest</h2>
+      <ul class="interest-list">
+        <li>
+          <strong>Network Security</strong>
+          <span>TCP/IP, firewalls, Wireshark</span>
+        </li>
+        <li>
+          <strong>CTF</strong>
+          <span>Web, crypto, binary challenges</span>
+        </li>
+        <li>
+          <strong>Web App Security</strong>
+          <span>OWASP Top 10, XSS, SQLi basics</span>
+        </li>
+        <li>
+          <strong>Crypto &amp; Authentication</strong>
+          <span>Public-key crypto, auth mechanisms</span>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Links</h2>
+      <div class="links">
+        <a href="https://github.com/j0hnsm1thyk" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://x.com/j0hnsm1thyk" target="_blank" rel="noopener">X (Twitter)</a>
+      </div>
+    </section>
+
+    <footer>
+      &copy; <span id="year"></span> John Smith. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
