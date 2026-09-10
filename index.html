@@ -3,18 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Personal introduction page of an engineer learning cybersecurity as a hobby">
+  <meta name="description" content="Personal space of J0hnSm1thyk — exploring the digital frontier.">
   <title>J0hnSm1thyk</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600&family=Sora:wght@300;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --text: #16171c;
-      --muted: #71727a;
-      --border: #ececf0;
-      --bg: #fbfbfc;
-      --gradient: linear-gradient(135deg, #6d5dfc, #4ac8f0);
+      --bg: #FFFFFF;
+      --text: #1A1A1A;
+      --muted: #888888;
+      --border: #E8E8E8;
+      --accent: #FADADD;
+      --sub-bg: #FAFAFA;
     }
 
     * {
@@ -28,87 +29,90 @@
         "Hiragino Sans", "Noto Sans JP", sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.7;
+      line-height: 1.8;
       -webkit-font-smoothing: antialiased;
       min-height: 100vh;
-      position: relative;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      background:
-        radial-gradient(600px 300px at 15% -5%, rgba(109, 93, 252, 0.08), transparent 60%),
-        radial-gradient(600px 300px at 90% 10%, rgba(74, 200, 240, 0.08), transparent 60%);
     }
 
     .container {
-      max-width: 640px;
+      max-width: 600px;
       margin: 0 auto;
-      padding: 5rem 1.75rem 3rem;
+      padding: 8rem 2rem 6rem;
     }
 
     /* Header */
     .hero {
-      margin-bottom: 3.5rem;
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+
+    .avatar-container {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 2.5rem;
     }
 
     .avatar {
-      width: 88px;
-      height: 88px;
+      width: 100%;
+      height: 100%;
       border-radius: 50%;
-      background: var(--gradient);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: "Sora", sans-serif;
-      font-size: 2.2rem;
-      font-weight: 700;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 10px 30px rgba(109, 93, 252, 0.3);
+      object-fit: cover;
+      border: 1px solid var(--text);
+      padding: 5px;
+      background: white;
+      box-shadow: 0 12px 30px rgba(26, 26, 26, 0.08);
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .avatar:hover {
+      transform: scale(1.05) rotate(2deg);
+      border-color: var(--accent);
     }
 
     .hero h1 {
       font-family: "Sora", sans-serif;
       font-size: 2.4rem;
       font-weight: 700;
-      letter-spacing: -0.02em;
-      line-height: 1.15;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      margin-bottom: 0.75rem;
     }
 
     .hero .handle {
       color: var(--muted);
-      font-size: 0.95rem;
-      margin-top: 0.35rem;
-      font-weight: 500;
+      font-size: 0.85rem;
+      font-weight: 300;
+      letter-spacing: 0.15em;
+      margin-bottom: 2rem;
+      text-transform: uppercase;
     }
 
     .hero .tagline {
-      color: var(--text);
-      margin-top: 1rem;
-      font-size: 1.05rem;
-      max-width: 42ch;
+      font-size: 1.1rem;
+      font-weight: 200;
+      max-width: 40ch;
+      margin: 0 auto;
+      opacity: 0.7;
+      font-style: italic;
     }
 
     /* Sections */
     section {
-      margin-bottom: 3rem;
+      margin-bottom: 5rem;
     }
 
     section h2 {
       font-family: "Sora", sans-serif;
-      font-size: 0.78rem;
+      font-size: 0.7rem;
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.25em;
       color: var(--muted);
-      margin-bottom: 1.1rem;
+      margin-bottom: 2rem;
       display: flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 1.2rem;
     }
 
     section h2::after {
@@ -119,8 +123,10 @@
     }
 
     section p {
-      color: #3a3b42;
-      font-size: 0.98rem;
+      font-weight: 300;
+      font-size: 0.95rem;
+      color: #555;
+      text-align: justify;
     }
 
     /* Interest items */
@@ -128,83 +134,90 @@
       list-style: none;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 0.8rem;
+      gap: 1.2rem;
     }
 
     .interest-list li {
-      background: #ffffff;
+      background: var(--sub-bg);
       border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 1rem 1.1rem;
-      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+      border-radius: 20px;
+      padding: 1.5rem;
+      transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
 
     .interest-list li:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(22, 23, 28, 0.06);
-      border-color: #d7d8de;
+      border-color: var(--accent);
+      background: #FFFFFF;
+      box-shadow: 0 8px 20px rgba(250, 218, 221, 0.5);
+      transform: translateY(-4px);
     }
 
     .interest-list li .icon {
-      font-size: 1.3rem;
-      line-height: 1;
+      font-size: 1.5rem;
       display: block;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.8rem;
+      opacity: 0.8;
     }
 
     .interest-list li strong {
       display: block;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       font-weight: 600;
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.4rem;
+      letter-spacing: -0.01em;
     }
 
     .interest-list li span {
-      font-size: 0.82rem;
+      font-size: 0.75rem;
       color: var(--muted);
+      font-weight: 300;
     }
 
     /* Links */
     .links {
       display: flex;
+      gap: 1rem;
       flex-wrap: wrap;
-      gap: 0.6rem;
     }
 
     .links a {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 0.55rem 1.1rem;
-      background: #ffffff;
-      border: 1px solid var(--border);
+      gap: 0.7rem;
+      padding: 0.7rem 1.5rem;
+      background: transparent;
+      border: 1px solid var(--text);
       color: var(--text);
-      border-radius: 999px;
+      border-radius: 100px;
       text-decoration: none;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       font-weight: 600;
-      transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
     }
 
     .links a svg {
       width: 16px;
       height: 16px;
       fill: currentColor;
-      opacity: 0.7;
     }
 
     .links a:hover {
-      border-color: #d0d1d8;
-      transform: translateY(-1px);
-      box-shadow: 0 6px 16px rgba(22, 23, 28, 0.06);
+      background: var(--text);
+      color: var(--bg);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
     }
 
     footer {
       text-align: center;
       color: var(--muted);
-      font-size: 0.82rem;
-      margin-top: 3.5rem;
-      letter-spacing: 0.02em;
+      font-size: 0.7rem;
+      font-weight: 300;
+      margin-top: 8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
     }
 
     @media (max-width: 480px) {
@@ -214,56 +227,60 @@
       .hero h1 {
         font-size: 2rem;
       }
+      .container {
+        padding: 6rem 1.5rem 4rem;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
     <header class="hero">
-      <div class="avatar">J</div>
+      <div class="avatar-container">
+        <img src="icon.jpg" alt="J0hnSm1thyk" class="avatar">
+      </div>
       <h1>John Smith</h1>
       <p class="handle">@J0hnSm1thyk</p>
-      <p class="tagline">Hi, there! Learning cybersecurity as a hobby.</p>
+      <p class="tagline">Decoding the unseen. Exploring the fringes of digital security.</p>
     </header>
 
     <section>
-      <h2>About Me</h2>
+      <h2>Introduction</h2>
       <p>
-        Hi, I'm John Smith.<br>
-        I'm fascinated by cybersecurity and study its fundamentals as a hobby,
-        including penetration testing. I'm currently learning through Hack The Box
-        Academy, and I enjoy understanding how things work by hands-on practice.
+        I am a seeker of knowledge, fascinated by the delicate balance between security and vulnerability. 
+        My journey involves diving deep into the fundamentals of cybersecurity—from the intricacies of network protocols to the art of penetration testing. 
+        Currently honing my craft through Hack The Box Academy, turning curiosity into capability through hands-on exploration of the digital void.
       </p>
     </section>
 
     <section>
-      <h2>Areas of Interest</h2>
+      <h2>Intellectual Pursuits</h2>
       <ul class="interest-list">
         <li>
           <span class="icon">🌐</span>
-          <strong>Network Security</strong>
-          <span>TCP/IP, firewalls, Wireshark</span>
+          <strong>Network Architecture</strong>
+          <span>TCP/IP, Packet Analysis, Firewalls</span>
         </li>
         <li>
           <span class="icon">🔒</span>
-          <strong>Web App Security</strong>
-          <span>OWASP Top 10, XSS, SQLi</span>
+          <strong>Web Vulnerabilities</strong>
+          <span>OWASP, XSS, Injection Logic</span>
         </li>
         <li>
           <span class="icon">🔑</span>
-          <strong>Crypto &amp; Auth</strong>
-          <span>Public-key crypto, auth</span>
+          <strong>Cryptographic Arts</strong>
+          <span>Public-key Infra, Auth Protocols</span>
         </li>
         <li>
           <span class="icon">🎯</span>
-          <strong>Penetration Testing</strong>
-          <span>Enumeration, exploitation</span>
+          <strong>Offensive Security</strong>
+          <span>Enumeration, Exploit Development</span>
         </li>
       </ul>
     </section>
 
     <section>
-      <h2>Links</h2>
+      <h2>Connect</h2>
       <div class="links">
         <a href="https://github.com/j0hnsm1thyk" target="_blank" rel="noopener">
           <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
@@ -277,7 +294,7 @@
     </section>
 
     <footer>
-      &copy; <span id="year"></span> J0hnSm1thyk
+      &copy; <span id="year"></span> J0hnSm1thyk &mdash; Established in the Void
     </footer>
   </div>
 
