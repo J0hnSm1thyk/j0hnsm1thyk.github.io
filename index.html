@@ -3,18 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Personal space of J0hnSm1thyk — exploring the digital frontier.">
-  <title>J0hnSm1thyk</title>
+  <meta name="description" content="Curriculum Vitae of J0hnSm1thyk — Cybersecurity Enthusiast">
+  <title>CV | J0hnSm1thyk</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600&family=Sora:wght@300;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #FFFFFF;
       --text: #1A1A1A;
-      --muted: #888888;
-      --border: #E8E8E8;
+      --muted: #666666;
+      --border: #EEEEEE;
       --accent: #FADADD;
+      --accent-dark: #F8C8C8;
       --sub-bg: #FAFAFA;
     }
 
@@ -29,277 +30,332 @@
         "Hiragino Sans", "Noto Sans JP", sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.8;
+      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
-      min-height: 100vh;
     }
 
-    .container {
-      max-width: 600px;
-      margin: 0 auto;
-      padding: 8rem 2rem 6rem;
+    .cv-page {
+      max-width: 850px;
+      margin: 3rem auto;
+      background: white;
+      padding: 4rem;
+      box-shadow: 0 0 40px rgba(0,0,0,0.03);
+      border: 1px solid var(--border);
     }
 
-    /* Header */
-    .hero {
-      text-align: center;
-      margin-bottom: 5rem;
-    }
-
-    .avatar-container {
-      position: relative;
-      width: 120px;
-      height: 120px;
-      margin: 0 auto 2.5rem;
+    /* Header Section */
+    header {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+      border-bottom: 2px solid var(--text);
+      padding-bottom: 2rem;
     }
 
     .avatar {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      border-radius: 0; /* Resume style: square or slight round */
+      border-radius: 8px;
       object-fit: cover;
       border: 1px solid var(--text);
-      padding: 5px;
-      background: white;
-      box-shadow: 0 12px 30px rgba(26, 26, 26, 0.08);
-      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      filter: grayscale(20%);
     }
 
-    .avatar:hover {
-      transform: scale(1.05) rotate(2deg);
-      border-color: var(--accent);
-    }
-
-    .hero h1 {
+    .header-text h1 {
       font-family: "Sora", sans-serif;
-      font-size: 2.4rem;
+      font-size: 2.5rem;
       font-weight: 700;
-      letter-spacing: -0.04em;
-      line-height: 1.1;
-      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      margin-bottom: 0.5rem;
     }
 
-    .hero .handle {
+    .header-text .title {
+      font-size: 1rem;
+      font-weight: 500;
       color: var(--muted);
-      font-size: 0.85rem;
-      font-weight: 300;
-      letter-spacing: 0.15em;
-      margin-bottom: 2rem;
       text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+      display: block;
     }
 
-    .hero .tagline {
-      font-size: 1.1rem;
-      font-weight: 200;
-      max-width: 40ch;
-      margin: 0 auto;
-      opacity: 0.7;
-      font-style: italic;
+    .contact-info {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-weight: 400;
     }
 
-    /* Sections */
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* Section Styling */
     section {
-      margin-bottom: 5rem;
+      margin-bottom: 2.5rem;
     }
 
     section h2 {
       font-family: "Sora", sans-serif;
-      font-size: 0.7rem;
-      font-weight: 600;
+      font-size: 0.9rem;
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.25em;
-      color: var(--muted);
-      margin-bottom: 2rem;
-      display: flex;
-      align-items: center;
-      gap: 1.2rem;
+      letter-spacing: 0.15em;
+      color: var(--text);
+      margin-bottom: 1.2rem;
+      padding-left: 0.75rem;
+      border-left: 4px solid var(--accent);
     }
 
-    section h2::after {
-      content: "";
-      flex: 1;
-      height: 1px;
-      background: var(--border);
-    }
-
-    section p {
+    .summary {
+      font-size: 1rem;
       font-weight: 300;
-      font-size: 0.95rem;
-      color: #555;
-      text-align: justify;
+      color: #444;
+      margin-bottom: 1rem;
     }
 
-    /* Interest items */
-    .interest-list {
-      list-style: none;
+    /* Skills Grid */
+    .skills-container {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.2rem;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
     }
 
-    .interest-list li {
+    .skill-group {
+      margin-bottom: 1rem;
+    }
+
+    .skill-group h3 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tag {
       background: var(--sub-bg);
       border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 1.5rem;
-      transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-    }
-
-    .interest-list li:hover {
-      border-color: var(--accent);
-      background: #FFFFFF;
-      box-shadow: 0 8px 20px rgba(250, 218, 221, 0.5);
-      transform: translateY(-4px);
-    }
-
-    .interest-list li .icon {
-      font-size: 1.5rem;
-      display: block;
-      margin-bottom: 0.8rem;
-      opacity: 0.8;
-    }
-
-    .interest-list li strong {
-      display: block;
-      font-size: 0.9rem;
-      font-weight: 600;
-      margin-bottom: 0.4rem;
-      letter-spacing: -0.01em;
-    }
-
-    .interest-list li span {
+      padding: 0.2rem 0.6rem;
       font-size: 0.75rem;
+      font-weight: 400;
+      border-radius: 4px;
+      transition: all 0.2s ease;
+    }
+
+    .tag:hover {
+      border-color: var(--accent-dark);
+      color: var(--text);
+      background: white;
+    }
+
+    /* Experience/Education List */
+    .entry {
+      margin-bottom: 1.5rem;
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 1rem;
+    }
+
+    .entry-date {
+      font-size: 0.8rem;
+      font-weight: 600;
       color: var(--muted);
+      text-align: right;
+    }
+
+    .entry-content h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .entry-content p {
+      font-size: 0.9rem;
+      color: #555;
       font-weight: 300;
     }
 
-    /* Links */
+    /* Footer Links */
+    .footer-links {
+      margin-top: 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+
     .links {
       display: flex;
       gap: 1rem;
-      flex-wrap: wrap;
     }
 
     .links a {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.7rem;
-      padding: 0.7rem 1.5rem;
-      background: transparent;
-      border: 1px solid var(--text);
-      color: var(--text);
-      border-radius: 100px;
       text-decoration: none;
+      color: var(--text);
       font-size: 0.8rem;
       font-weight: 600;
-      letter-spacing: 0.05em;
       text-transform: uppercase;
-      transition: all 0.3s ease;
-    }
-
-    .links a svg {
-      width: 16px;
-      height: 16px;
-      fill: currentColor;
+      letter-spacing: 0.05em;
+      transition: color 0.2s ease;
     }
 
     .links a:hover {
-      background: var(--text);
-      color: var(--bg);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      transform: translateY(-2px);
+      color: #aaa;
     }
 
-    footer {
-      text-align: center;
-      color: var(--muted);
+    .copyright {
       font-size: 0.7rem;
+      color: var(--muted);
       font-weight: 300;
-      margin-top: 8rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
     }
 
-    @media (max-width: 480px) {
-      .interest-list {
+    @media (max-width: 768px) {
+      .cv-page {
+        margin: 1rem;
+        padding: 2rem;
+      }
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      .contact-info {
+        justify-content: center;
+      }
+      .entry {
         grid-template-columns: 1fr;
+        gap: 0.3rem;
       }
-      .hero h1 {
-        font-size: 2rem;
-      }
-      .container {
-        padding: 6rem 1.5rem 4rem;
+      .entry-date {
+        text-align: left;
       }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header class="hero">
-      <div class="avatar-container">
-        <img src="icon.jpg" alt="J0hnSm1thyk" class="avatar">
+  <div class="cv-page">
+    <header>
+      <img src="icon.jpg" alt="J0hnSm1thyk" class="avatar">
+      <div class="header-text">
+        <h1>John Smith</h1>
+        <span class="title">Cybersecurity Researcher & Enthusiast</span>
+        <div class="contact-info">
+          <div class="contact-item"><span>ID:</span> @J0hnsm1thyk</div>
+          <div class="contact-item"><span>LOC:</span> Tokyo, JP</div>
+          <div class="contact-item"><span>STATUS:</span> Learning / Exploring</div>
+        </div>
       </div>
-      <h1>John Smith</h1>
-      <p class="handle">@J0hnSm1thyk</p>
-      <p class="tagline">Decoding the unseen. Exploring the fringes of digital security.</p>
     </header>
 
     <section>
-      <h2>Introduction</h2>
-      <p>
-        I am a seeker of knowledge, fascinated by the delicate balance between security and vulnerability. 
-        My journey involves diving deep into the fundamentals of cybersecurity—from the intricacies of network protocols to the art of penetration testing. 
-        Currently honing my craft through Hack The Box Academy, turning curiosity into capability through hands-on exploration of the digital void.
+      <h2>Professional Profile</h2>
+      <p class="summary">
+        A dedicated cybersecurity enthusiast with a profound interest in offensive security and network architecture. 
+        Focused on understanding the underlying mechanisms of digital vulnerabilities to build more resilient systems. 
+        Currently pursuing advanced practical knowledge through hands-on labs and simulated environments.
       </p>
     </section>
 
     <section>
-      <h2>Intellectual Pursuits</h2>
-      <ul class="interest-list">
-        <li>
-          <span class="icon">🌐</span>
-          <strong>Network Architecture</strong>
-          <span>TCP/IP, Packet Analysis, Firewalls</span>
-        </li>
-        <li>
-          <span class="icon">🔒</span>
-          <strong>Web Vulnerabilities</strong>
-          <span>OWASP, XSS, Injection Logic</span>
-        </li>
-        <li>
-          <span class="icon">🔑</span>
-          <strong>Cryptographic Arts</strong>
-          <span>Public-key Infra, Auth Protocols</span>
-        </li>
-        <li>
-          <span class="icon">🎯</span>
-          <strong>Offensive Security</strong>
-          <span>Enumeration, Exploit Development</span>
-        </li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Connect</h2>
-      <div class="links">
-        <a href="https://github.com/j0hnsm1thyk" target="_blank" rel="noopener">
-          <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
-          GitHub
-        </a>
-        <a href="https://x.com/j0hnsm1thyk" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          X
-        </a>
+      <h2>Technical Skills</h2>
+      <div class="skills-container">
+        <div class="skill-group">
+          <h3>Network Security</h3>
+          <div class="tags">
+            <span class="tag">TCP/IP</span>
+            <span class="tag">Wireshark</span>
+            <span class="tag">Packet Analysis</span>
+            <span class="tag">Firewalls</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Web Security</h3>
+          <div class="tags">
+            <span class="tag">OWASP Top 10</span>
+            <span class="tag">XSS</span>
+            <span class="tag">SQL Injection</span>
+            <span class="tag">Auth Bypass</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Offensive Sec</h3>
+          <div class="tags">
+            <span class="tag">Enumeration</span>
+            <span class="tag">Privilege Escalation</span>
+            <span class="tag">HTB Academy</span>
+            <span class="tag">Metasploit</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Cryptography</h3>
+          <div class="tags">
+            <span class="tag">Public-key Crypto</span>
+            <span class="tag">Hashing</span>
+            <span class="tag">TLS/SSL</span>
+            <span class="tag">Auth Protocols</span>
+          </div>
+        </div>
       </div>
     </section>
 
-    <footer>
-      &copy; <span id="year"></span> J0hnSm1thyk &mdash; Established in the Void
+    <section>
+      <h2>Learning Path</h2>
+      <div class="entry">
+        <div class="entry-date">Ongoing</div>
+        <div class="entry-content">
+          <h4>Hack The Box Academy</h4>
+          <p>Pursuing specialized modules in Penetration Testing and Network Security. Focused on practical application and laboratory-based verification of vulnerabilities.</p>
+        </div>
+      </div>
+      <div class="entry">
+        <div class="entry-date">2026 - Present</div>
+        <div class="entry-content">
+          <h4>Independent Research</h4>
+          <p>Self-directed study of OS internals, network protocols, and cryptographic implementation to understand the root causes of common security flaws.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Core Interests</h2>
+      <div class="entry">
+        <div class="entry-date">Focus</div>
+        <div class="entry-content">
+          <h4>Digital Forensics & Incident Response</h4>
+          <p>Interested in the art of tracing digital footprints and analyzing attack vectors post-compromise.</p>
+        </div>
+      </div>
+      <div class="entry">
+        <div class="entry-date">Focus</div>
+        <div class="entry-content">
+          <h4>Automation in Security</h4>
+          <p>Developing tools and scripts to automate reconnaissance and vulnerability scanning for efficiency.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer-links">
+      <div class="links">
+        <a href="https://github.com/j0hnsm1thyk" target="_blank">GitHub</a>
+        <a href="https://x.com/j0hnsm1thyk" target="_blank">X / Twitter</a>
+      </div>
+      <div class="copyright">
+        &copy; 2026 J0hnSm1thyk &mdash; CV Version 1.0
+      </div>
     </footer>
   </div>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
